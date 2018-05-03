@@ -244,7 +244,7 @@ def pull_vatsim_data(eve_app):
             eve_app (Object):   Eve instance
     """
     set_update_time(eve_app, datetime.utcnow()) # avoid concurrent updates
-    vatsim_data_file = urlopen('http://info.vroute.net/vatsim-data.txt')
+    vatsim_data_file = urlopen('http://snet.flyatlantic-va.com/whazzup.txt')
     update_time = None
     open_spec = None
     for line in vatsim_data_file:

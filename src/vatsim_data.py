@@ -99,7 +99,7 @@ def parse_updated_datetime(line):
     """Parses the first line from VATSIM whazupp file for the update Datetime.
     """
     regex_sig = r'^; Created at (\d{2})\/(\d{2})\/(\d{4}) '\
-                r'(\d{2}):(\d{2}):(\d{2}) UTC by Data Server V\d.\d$'
+                r'(\d{2}):(\d{2})$'
 
     match = re.match(regex_sig, line)
 
@@ -111,7 +111,7 @@ def parse_updated_datetime(line):
                     int(match.groups()[0]), # Day
                     int(match.groups()[3]), # Hour
                     int(match.groups()[4]), # Minute
-                    int(match.groups()[5]), # Second
+                    0,                      # Second
                     0)                      # Microsecond
 
     return dt

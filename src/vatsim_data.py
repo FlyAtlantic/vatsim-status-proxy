@@ -250,6 +250,8 @@ def pull_vatsim_data(eve_app):
     for line in vatsim_data_file:
         line = line.decode('utf-8', 'ignore')
         line = line.strip()
+        if line == '':
+            continue
 
         if update_time is None:
             update_time = parse_updated_datetime(line)

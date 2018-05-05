@@ -31,7 +31,7 @@ blueprint = Blueprint('prefix_uri', __name__)
 if 'PORT' in os.environ:
     port = int(os.environ.get('PORT'))
     host = '0.0.0.0'
-    debug = True
+    debug = False
 else:
     port = 5000
     host = '0.0.0.0'
